@@ -16,6 +16,7 @@ use Nextras\Dbal\Drivers\IDriver;
 use Nextras\Dbal\InvalidArgumentException;
 use Nextras\Dbal\NotImplementedException;
 use Nextras\Dbal\NotSupportedException;
+use Nextras\Dbal\Platforms\MsSqlPlatform;
 use Nextras\Dbal\Result\Result;
 
 
@@ -179,7 +180,7 @@ class SqlsrvDriver implements IDriver
 
 	public function createPlatform(Connection $connection)
 	{
-		throw new NotImplementedException();
+		return new MsSqlPlatform($connection);
 	}
 
 
